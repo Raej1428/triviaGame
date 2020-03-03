@@ -1,29 +1,16 @@
-//  Interval Demonstration
-//  Set our number counter to 100.
-var number = 30;
-//  Variable that will hold our interval ID
+//timer 
+var number = 60;
 var intervalId;
-//  When the stop button gets clicked, run the stop function.
-// $("stop").on("click", stop);
-// $("resume").on("click", run);
-//  The run function sets an interval
-//  that runs the decrement function once a second.
-//  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
 function run() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
 }
 //  The decrement function.
 function decrement() {
-    //  Decrease number by one.
     number--;
-    //  Show the number in the #show-number tag.
     $("#show-number").html("<h2> You have " + number + " seconds left! </h2>");
-    //  Once number hits zero...
     if (number === 0) {
-        //  ...run the stop function.
         stop();
-        //  Alert the user that time is up.
         alert("Times Up!");
     }
 }
@@ -31,9 +18,9 @@ function decrement() {
 function stop() {
     clearInterval(intervalId);
 }
-//  Execute the run function.
 run();
 
+//game code 
 //create variable for the content of the questions
 var qContent = [
     {
@@ -63,32 +50,94 @@ var qContent = [
     },
 ]
 
-function populateQuestion() {
-    var selection = qContent[Math.floor(Math.random()*24)];
-    type = selection ["answer"];
-    fullAnswer = selection["fullAnswer"];
-    $("name").html(selection["name"]);
-    $("generate").hide();
-    $("result").hide();
+var counter = 0,
+    score = 0;
+
+// assigning elements
+
+var $name = $(".name"),
+    $generate = $(".generate"),
+    $result = $(".results"),
+    $score = $(".score"),
+    $thanks = $(".thanks"),
+    $options = $(".options");
+
+var aveFiveApp = {};
+
+// starts off by showing the "name" value in the first item in the object
+aveFiveApp.init = function() {
+  var selection = qContent[counter];
+  type = selection["answer"];
+  $name.html(selection["name"]);
+  $generate.hide();
+  $result.hide();
+  $score.hide();
+  $thanks.hide();
 }
 
+// the function for generating questions and moving quiz along
+
+aveFiveApp.generate = function() {
+
+  // if there are still questions remaining, show next one
+  
+  if (counter < qContent.length) {
+    var selection = qContent[counter];
+    $name.html(selection["name"]);
+    type = selection["answer"];  
+
+    $result.hide();
+    $score.hide();
+    $name.show();
+    $options.show();
+
+  // if there are no more questions...
+  
+  } else {
+    $thanks.show()
+  }
+
+  $generate.hide();
+}
+
+// determines whether selection was right
+
 $(".choice").click(function(e) {
-    var chooseAnswer =e.target.id;
+  var chosenAnswer = e.target.id;  
+  $result.show();
+  $score.show();
+  $name.hide();
+  $options.hide();
 
-    $("#result").show();
-    $("#name").hide();
-    $("options").hide()
+  // setting up "full sentence" values for each type -- add else if statements if you have more than two possibilities
+  
+  if (type == "True") {
+    fullAnswer = "True";
+  } else {
+    fullAnswer = "False";
+  }
+   
+  // tell the user whether they're right or wrong, and add a point to the score if they're right
 
-    if (chooseAnswer == type) {
-        $("#result").html("<span class='right'>By the power of Judd you've done it!</span>" + fullAnswer + ".");
-    }else {
-        $("#result").html("<span class='wrong'>You were never my captain anyway! The correct answer was </span>" + fullAnswer + ".");
-    }
-
-    $("generate").show();
+  if (chosenAnswer == type) {
+    $result.html("<span class='right'>By the power of Judd you did it, I mean Judd did it!</span> It's: " + fullAnswer + ".");
+    score++;
+  } else {
+    $result.html("<span class='wrong'>I knew you were a fraud CLARK!</span> That's incorrect, it's: " + fullAnswer + ".");
+  }
+  counter++;
+  $score.html("You're " + score + " for " + counter + ".");
+  $generate.show();
+  
 });
 
+$(document).ready(function() {
+    aveFiveApp.init();
+});
 
+$generate.on("click", function() {
+    aveFiveApp.generate();
+});
 
 
 

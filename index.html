@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet" type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
     <script src="assets/javascript/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>Document</title>
- </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/init.js"></script>
+    <title>Avenue5 Trivia</title>
+</head>
+
 <body>
+    <header>
+        <h1><span class="or">Avenue5</span>True <span class="or">or</span> False!</h1>
+        <p class="intro">Maybe you've heard of this <em>seemingly</em> innocent show on HBO, maybe not. Well if not,
+            then maybe don't take the quiz below :-).
+            This incredible show tells the tail of a fake captain, a billionaire, his sassy staffer, the crew, and the
+            passengers. It's a never ending voyage to space and nothing can go right!!!</p>
+        <p class="intro">Ready? Here's some <a href="https://www.youtube.com/watch?v=cnydZjjYeN8" target="_blank">
+                Avenue5 theme music</a>.</p>
+    </header>
     <script src="assets/javascript/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+
     <div id="show-number"></div>
 
     <br>
@@ -19,16 +36,21 @@
     <button id="resume">Resume</button> -->
 
     <div id="main" class="main">
-        <div class="quit">
-            <h2 id="name" class="name"></h2>
-            <h2 id="result" class="result"></h2>
-            <div id="options">
-                <div class="choice" id="true">True</div>
-                <div class="choice" id="false">False</div>
+        <div class="quiz">
+            <p class="name"></p>
+            <p class="results"></p>
+            <p class="score"></p>
+            <div class="options">
+                <div class="choice" id="True">True</div>
+                <div class="choice" id="False">False</div>
             </div>
-            <div class="generate" id="generate">Try Again.</div>
+            <div class="generate" id="generate">Next</div>
         </div>
     </div>
 
+    <footer class="clearfix">
+        Created by Rachael Gladwin
+    </footer>
 </body>
+
 </html>

@@ -1,0 +1,199 @@
+body {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  background-color: darkslateblue;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+}
+
+header {
+  padding: 10% 15% 5% 15%;
+  background-image: url(../assets/images/avenue5.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: auto;
+  color: white;
+  font-weight: 300;
+  box-shadow: 0 0 10px #111;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 48px;
+  margin-bottom: 40px;
+  color: darkblue;
+  text-transform: capitalize;
+  text-shadow: 4px 4px 0 darkslateblue;
+}
+
+header h1 span.or {
+  font-family: "Space Mono", monospace;
+  text-shadow: 4px 4px 0 darkslateblue;
+  display: block;
+  text-transform: uppercase;
+  color: white;
+}
+
+header p {
+  font-family: "Space Mono", monospace;
+  text-align: justify;
+  text-shadow: 2px 2px 0 #000;
+  background-color: rgba(105, 105, 105, 0.52);
+  padding: 15px;
+}
+
+header p.disclaimer {
+  font-size: 14px;
+}
+
+header a,
+footer a {
+  color: darkblue;
+  text-shadow: 2px 2px 0 #fff;
+}
+
+#show-number {
+  color: aliceblue;
+}
+
+.main {
+  width: 70%;
+  margin: 0 auto;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  padding: 50px 0;
+  min-height: 400px;
+}
+
+.main a {
+  color: #000;
+}
+
+.main p.name {
+  color: darkslategray;
+  text-shadow: 1px 1px #fff;
+  font-size: 48px;
+  padding: 20px;
+  margin: 40px 0;
+}
+
+.main p.results {
+  color: darkslategray;
+  font-size: 48px;
+}
+
+.main p.results span.wrong {
+  color: #0d0b92;
+  display: block;
+}
+
+.main p.results span.right {
+  color: darkslategray;
+  display: block;
+}
+
+.main .choice,
+.main .generate {
+  display: inline;
+  padding: 10px;
+  border: 3px solid darkblue;
+  color: darkslateblue;
+  border-radius: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
+  background: #fff;
+  cursor: pointer;
+}
+
+.main .choice {
+  margin: 40px 0;
+}
+
+.main .results {
+  margin-bottom: 40px;
+}
+
+footer {
+  background: #2c3e50;
+  padding: 10px 20px 20px 20px;
+  text-align: left;
+  color: white;
+  font-family: "Roboto Slab", serif;
+}
+
+
+@media screen and (max-width: 1333px){
+  .background, .container {
+      float: none;
+      margin: 0 auto;
+      width: auto;
+  }
+ }
+
+ @media screen and (max-width: 1050px){
+  .background, .container {
+      float: none;
+      margin: 0 auto;
+      width: auto;
+  }
+ }   
+
+@media screen and (max-width: 900px){
+  .background, .container {
+      float: none;
+      margin: 0 auto;
+      width: auto;
+  }
+ }
+
+@media screen and (max-width: 768px) {
+  .background, .container {
+      float: none;
+      margin: 0 auto;
+      width: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .background, .container {
+      float: none;
+      margin: 0 auto;
+      width: auto;
+  }
+    
+}
+
+@media screen and (max-width: 500px) {
+  .background, .container {
+      float: none;
+      margin: 0 auto;
+      width: auto;
+  }
+    
+}
+
+@media screen and (max-width: 340px) {
+  .background, .container {
+      float: none;
+      margin: 0 auto;
+      width: auto;
+  }
+    
+}
