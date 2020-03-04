@@ -15,7 +15,6 @@ var content = [
 
 
 //placing variables into HTML elements for display
-
 var $name = $('.name'),
   $generate = $('.generate'),
   $result = $('.results'),
@@ -81,14 +80,14 @@ $('.choice').click(function (e) {
 
 $(document).ready(function () {
   aveApp.init();
-
 });
+
+var intervalId;
+var number = 60;
 
 $generate.on('click', function () {
   aveApp.generate();
   //timer 
-  var number = 60;
-  var intervalId;
   function run() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
@@ -98,15 +97,21 @@ $generate.on('click', function () {
     number--;
     $("#show-number").html("<h2> You have " + number + " seconds left! </h2>");
     if (number === 0) {
-      stop();
+      clearInterval(intervalId);
       alert("Times Up!");
+      stop();
     }
   }
   //  The stop function
   function stop() {
     clearInterval(intervalId);
+    setInterval(() => { run
+      
+    }, interval);
   }
+  
   run();
+
 });
 
 
