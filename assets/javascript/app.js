@@ -100,7 +100,6 @@ $generate.on('click', function () {
     if (number === 0) {
       stop();
       alert("Times Up!");
-      setInterval(interval, 0);
     }
   }
   //  The stop function
