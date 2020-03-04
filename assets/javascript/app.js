@@ -93,15 +93,14 @@ $generate.on('click', function () {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
   }
-
   //  The decrement function.
   function decrement() {
     number--;
     $("#show-number").html("<h2> You have " + number + " seconds left! </h2>");
     if (number === 0) {
       stop();
-      clearInterval(intervalId);
       alert("Times Up!");
+      setInterval(interval, 0);
     }
   }
   //  The stop function

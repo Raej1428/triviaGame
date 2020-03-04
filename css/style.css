@@ -58,8 +58,8 @@ header p {
 }
 
 header a {
-  color: rgb(1, 1, 46);
-  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.247);
+  color: rgb(9, 9, 156);
+  text-shadow: 2px 2px 0 rgba(71, 61, 139, 0.607);
 }
 
 #show-number {
