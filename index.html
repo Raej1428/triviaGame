@@ -4,53 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avenue5</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet" type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Space+Mono&display=swap' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
-    <script src="assets/javascript/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/init.js"></script>
-    <title>Avenue5 Trivia</title>
 </head>
 
 <body>
+
     <header>
-        <h1><span class="or">Avenue5</span>True <span class="or">or</span> False!</h1>
-        <p class="intro">Maybe you've heard of this <em>seemingly</em> innocent show on HBO, maybe not. Well if not,
+        <h1>Avenue5 True<span class="or">or</span> False Quiz!</h1>
+        <p class="intro">Maybe you've seen this <em>seemingly</em> innocent show on HBO, maybe not. Well if not,
             then maybe don't take the quiz below :-).
             This incredible show tells the tail of a fake captain, a billionaire, his sassy staffer, the crew, and the
             passengers. It's a never ending voyage to space and nothing can go right!!!</p>
-        <p class="intro">Ready? Here's some <a href="https://www.youtube.com/watch?v=cnydZjjYeN8" target="_blank">
-                Avenue5 theme music</a>.</p>
+        <p class="intro">Ready? Here's some energizing Avenue5 <a href="https://www.youtube.com/watch?v=cnydZjjYeN8"
+                target="_blank">theme music!</a> just for you!</p>
+        <p id="show-number">Timer: </p>
     </header>
-    <script src="assets/javascript/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <div id="show-number"></div>
-
-    <br>
-
-    <!-- <button id="stop">Pause</button>
-    <button id="resume">Resume</button> -->
 
     <div id="main" class="main">
         <div class="quiz">
             <p class="name"></p>
             <p class="results"></p>
             <p class="score"></p>
+            <p class="thanks">Thanks for playing!</p>
             <div class="options">
-                <div class="choice" id="True">True</div>
-                <div class="choice" id="False">False</div>
+                <div class="choice" id="true">true</div>
+                <div class="choice" id="false">false</div>
             </div>
-            <div class="generate" id="generate">Next</div>
+            <div class="generate" id="generate">next</div>
         </div>
     </div>
 
     <footer class="clearfix">
-        Created by Rachael Gladwin
+        Coded by Rachael Gladwin
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../triviaGame/assets/javascript/app.js"></script>
+
 </body>
 
 </html>
