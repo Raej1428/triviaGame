@@ -105,9 +105,7 @@ $generate.on('click', function () {
   //  The stop function
   function stop() {
     clearInterval(intervalId);
-    setInterval(() => { run
-      
-    }, interval);
+    setInterval(60)
   }
   
   run();
