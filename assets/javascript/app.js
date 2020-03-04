@@ -92,26 +92,28 @@ var number = 60;
 $generate.on('click', function () {
   aveApp.generate();
   //timer 
-  function run() {
+  function run(){
+    $("#show-number").html("<h2>" + number + "</h2>");
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
   }
-  //  The decrement function.
-  function decrement() {
+  
+  function decrement(){
     number--;
-    $("#show-number").html("<h2> You have " + number + " seconds left! </h2>");
+    $("#show-number").html("<h2>You have " + number + " seconds left!!!</h2>");
     if (number === 0) {
-      alert("Times Up!");
-      stop();
-    }
+          //  Kill the clock
+          clearInterval(intervalId);
+          //say times up
+        $("#show-number").html("<h2>TIMES UP!</h2>");
+        //reset the number
+          number = 5
+        }
   }
-  //  The stop function
-  function stop() {
-    clearInterval(intervalId);
-    setInterval(set, 60)
-  }
-
-  run();
+  
+  $("#start").click(function(){
+    run();
+  });
 
 });
 
