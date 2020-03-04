@@ -11,7 +11,11 @@ var content = [
   { "name": "Clark loves Billie", "answer": "true" },
   { "name": "A baby made the ship beep.", "answer": "true" },
   { "name": "The ship was built by NASA", "answer": "false" },
-  { "name": "Karen makes a great passenger liason.", "answer": "false" },]
+  { "name": "Karen makes a great passenger liason.", "answer": "false" },
+  { "name": "Fake Captain Clark saved Avenue3 from certain doom", "answer": "true" },
+  { "name": "They will be up in space for three to six years after a missed trajectory", "answer": "false" },
+  {"name": "The crew 'flying' the ship is real.", "answer": "false"},
+]
 
 
 //placing variables into HTML elements for display
@@ -59,7 +63,7 @@ $('.choice').click(function (e) {
   $score.show();
   $name.hide();
   $options.hide();
-  // setting up "full sentence" values for each type -- add else if statements if you have more than two possibilities
+  // setting up "full sentence" values for each type 
   if (type == "true") {
     fullAnswer = "true";
   } else {
@@ -97,7 +101,6 @@ $generate.on('click', function () {
     number--;
     $("#show-number").html("<h2> You have " + number + " seconds left! </h2>");
     if (number === 0) {
-      clearInterval(intervalId);
       alert("Times Up!");
       stop();
     }
@@ -105,9 +108,9 @@ $generate.on('click', function () {
   //  The stop function
   function stop() {
     clearInterval(intervalId);
-    setInterval(60)
+    setInterval(set, 60)
   }
-  
+
   run();
 
 });
