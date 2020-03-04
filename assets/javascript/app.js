@@ -24,11 +24,8 @@ var $name = $('.name'),
   $options = $('.options');
 
 var aveApp = {};
-
-// the initial state of the quiz:
-// starts off by showing the "name" value in the first item in the data object
-// hides the 'next' button, results, score and 'thanks for playing' html as a default
-
+//used audio theory from wordguessgame
+// starts off by showing the "name" value in the first item in the object, hides the 'next' button, results, score and 'thanks for playing'
 aveApp.init = function () {
   var selection = content[counter];
   type = selection["answer"];
@@ -38,9 +35,7 @@ aveApp.init = function () {
   $score.hide();
   $thanks.hide();
 }
-
-// the function for moving through the quiz
-
+// the function for generating questions 
 aveApp.generate = function () {
   // if there are still questions remaining, show the next one
   if (counter < content.length) {
@@ -52,13 +47,13 @@ aveApp.generate = function () {
     $score.hide();
     $name.show();
     $options.show();
-    // if there are no more questions, thank the user for playing and give the option to tweet the score
+    // if there are no more questions show thanks - still not working
   } else {
     $thanks.show();
   }
   $generate.hide();
 }
-// the event handler that determines whether the user's selection was right
+// the event handler that determines whether the user's selection was right - e is random - not sure what i could use in place of fullAnswer but it works
 $('.choice').click(function (e) {
   var chosenAnswer = e.target.id;
   $result.show();
