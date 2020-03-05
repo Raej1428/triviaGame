@@ -93,7 +93,7 @@ $generate.on('click', function () {
   aveApp.generate();
   //timer 
   function run(){
-    $("#show-number").html("<h2>" + number + "</h2>");
+    $("#show-number").html("<h2>You have " + number + " seconds left!!!</h2>");
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
   }
@@ -111,9 +111,7 @@ $generate.on('click', function () {
         }
   }
   
-  $("#start").click(function(){
-    run();
-  });
+  run();
 
 });
 
